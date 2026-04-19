@@ -67,7 +67,7 @@ WEB_SEARCH_TOOL = {
 def fetch_updates_for_item(client: Anthropic, item: dict, today_iso: str) -> dict:
     user_msg = (
         f"Topic: {item['title']}\n"
-        f"Topic tag: {item['topic']}\n"
+        f"Category: {item['category']}\n"
         f"Episode aired: {item['episode_date']}\n"
         f"Today: {today_iso}\n"
         f"The hosts' take at the time: {item['pov_summary']}\n\n"
