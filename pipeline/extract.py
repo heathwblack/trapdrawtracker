@@ -200,10 +200,25 @@ def upsert_episode(store: dict, ep: Episode, extracted: list[dict]) -> None:
 
 
 def main() -> None:
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force", action="store_true",
+                        help="Re-extract episodes that already have items (wipes their updates data).")
+    parser.add_argument("--episode", type=int, default=0,
+                        help="Only (re-)extract this episode number.")
+    args = parser.parse_args()
+
     if not ANTHROPIC_API_KEY:
         sys.exit("ANTHROPIC_API_KEY is not set. Copy .env.example to .env and fill it in.")
     store = load_existing()
-    for ep in fetch_episodes():
+    already_extracted = {i["episode"] for i in store["items"]}
+    episodes = fetch_episodes()
+    if args.episode:
+        episodes = [e for e in episodes if e.number == args.episode]
+    for ep in episodes:
+        if ep.number in already_extracted and not args.force:
+            print(f"  skip     {ep.number}  {ep.title}  (already extracted — use --force to redo)")
+            continue
         print(f"  extract  {ep.number}  {ep.title}")
         items = extract_items(ep)
         upsert_episode(store, ep, items)
