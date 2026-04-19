@@ -22,7 +22,8 @@ Every stage is idempotent — rerun and it skips finished work.
 ## Setup
 
 ```bash
-pip install -r requirements.txt
+python3 -m venv .venv && source .venv/bin/activate
+python3 -m pip install -r requirements.txt
 cp .env.example .env  # fill in ANTHROPIC_API_KEY + whisper paths
 
 # whisper.cpp (macOS)
@@ -43,15 +44,15 @@ brew install ffmpeg
 ```bash
 ./scripts/run_all.sh           # full pipeline end-to-end
 # or piecemeal:
-python -m pipeline.fetch_feed  # list 2026 Chop Sessions
-python -m pipeline.download
-python -m pipeline.transcribe
-python -m pipeline.extract
+python3 -m pipeline.fetch_feed  # list 2026 Chop Sessions
+python3 -m pipeline.download
+python3 -m pipeline.transcribe
+python3 -m pipeline.extract
 ```
 
 View the site locally:
 ```bash
-python -m http.server 8000 --directory docs
+python3 -m http.server 8000 --directory docs
 open http://localhost:8000
 ```
 
