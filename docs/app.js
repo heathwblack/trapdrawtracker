@@ -1,6 +1,6 @@
 const SPOTIFY_URL = id => `https://open.spotify.com/episode/${id}`;
 
-const state = { store: { episodes: [], items: [] }, filters: { q: "", episode: "", category: "" } };
+const state = { store: { episodes: [], items: [] }, filters: { q: "", topic: "", episode: "", category: "" } };
 
 const el = (tag, attrs = {}, children = []) => {
   const node = document.createElement(tag);
@@ -36,11 +36,12 @@ function episodeLink(item) {
 }
 
 function matches(item) {
-  const { q, episode, category } = state.filters;
+  const { q, topic, episode, category } = state.filters;
+  if (topic && item.topic !== topic) return false;
   if (episode && String(item.episode) !== episode) return false;
   if (category && item.category !== category) return false;
   if (q) {
-    const hay = `${item.title} ${item.pov_summary} ${item.quote} ${item.status}`.toLowerCase();
+    const hay = `${item.title} ${item.topic ?? ""} ${item.pov_summary} ${item.quote} ${item.status}`.toLowerCase();
     if (!hay.includes(q.toLowerCase())) return false;
   }
   return true;
@@ -59,6 +60,7 @@ function render() {
       el("li", { class: "item" }, [
         el("div", { class: "item-head" }, [
           el("h2", { class: "item-title" }, item.title),
+          item.topic ? el("span", { class: "badge topic" }, item.topic) : null,
           el("span", { class: "badge category" }, item.category),
           episodeLink(item),
         ]),
@@ -88,6 +90,14 @@ async function init() {
     return;
   }
   state.store = await res.json();
+
+  const topicCounts = new Map();
+  for (const i of state.store.items) {
+    if (!i.topic) continue;
+    topicCounts.set(i.topic, (topicCounts.get(i.topic) ?? 0) + 1);
+  }
+  const topics = [...topicCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  populateSelect("topic", topics.map(([t]) => t), t => `${t} (${topicCounts.get(t)})`);
 
   const epNumbers = [...new Set(state.store.items.map(i => i.episode))].sort((a, b) => b - a);
   populateSelect("episode", epNumbers, n => {

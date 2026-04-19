@@ -38,7 +38,7 @@ header h1 {
   margin: 1rem auto 0;
   padding: 0 1.25rem;
   display: grid;
-  grid-template-columns: 1fr 180px 180px;
+  grid-template-columns: 1fr 180px 180px 180px;
   gap: 0.5rem;
 }
 .controls input,
@@ -104,6 +104,7 @@ main {
   border: 1px solid var(--border);
 }
 .badge.category { color: var(--accent); }
+.badge.topic { color: #7ac5ff; border-color: #2b3e55; }
 .episode-link {
   color: var(--muted);
   text-decoration: none;

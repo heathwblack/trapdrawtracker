@@ -2,6 +2,4 @@ __pycache__/
 *.pyc
 .venv/
 .env
-data/audio/
-*.wav
 .DS_Store

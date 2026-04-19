@@ -10,8 +10,8 @@ from pathlib import Path
 from anthropic import Anthropic
 
 from pipeline.config import ANTHROPIC_API_KEY, ANTHROPIC_MODEL, ITEMS_PATH
+from pipeline.fetch_captions import transcript_path
 from pipeline.fetch_feed import Episode, fetch_episodes
-from pipeline.transcribe import transcript_path
 
 SYSTEM_PROMPT = """You analyze transcripts of "Chop Session" episodes from the Trap Draw podcast (No Laying Up). The hosts — Big, Soly, DJ Pie, TC, Neil, Randy, and rotating guests — run through a mix of golf news, sports stories, world/culture happenings, and running bits.
 
@@ -36,6 +36,7 @@ EXCLUDE:
 
 For each monitoring item, return:
 - title: 5–10 words, snappy and specific (e.g. "Mt Everest insurance fraud scheme", not "Mountaineering news")
+- topic: a short 1–4 word canonical tag that groups related stories across episodes. Use Title Case. Reuse tags when a new item fits an existing one. Examples: "LIV Golf", "PGA Tour", "Ryder Cup", "NFL Playoffs", "MLB Hot Stove", "Things That Are Sick", "College Football", "Course Architecture", "NBA", "Formula 1", "Mountaineering", "Crime & Scandal", "Media & TV". Prefer reusing a well-known tag over coining a new one; only create a new tag if nothing existing fits.
 - category: one of golf, sports, world-news, culture, business, other
 - timestamp_sec: integer seconds into the episode where the discussion begins
 - pov_summary: 2–3 sentences in the hosts' voice capturing their actual take — what they think, not a neutral summary
@@ -57,6 +58,10 @@ TOOL = {
                     "type": "object",
                     "properties": {
                         "title": {"type": "string"},
+                        "topic": {
+                            "type": "string",
+                            "description": "Short 1-4 word canonical tag in Title Case, reused across related items.",
+                        },
                         "category": {
                             "type": "string",
                             "enum": ["golf", "sports", "world-news", "culture", "business", "other"],
@@ -66,7 +71,7 @@ TOOL = {
                         "status": {"type": "string"},
                         "quote": {"type": "string"},
                     },
-                    "required": ["title", "category", "timestamp_sec", "pov_summary", "status", "quote"],
+                    "required": ["title", "topic", "category", "timestamp_sec", "pov_summary", "status", "quote"],
                 },
             }
         },
@@ -156,6 +161,7 @@ def upsert_episode(store: dict, ep: Episode, extracted: list[dict]) -> None:
             "episode": ep.number,
             "episode_date": ep.date,
             "title": raw["title"],
+            "topic": raw["topic"],
             "category": raw["category"],
             "timestamp_sec": ts,
             "timestamp_display": _format_timestamp(ts),
