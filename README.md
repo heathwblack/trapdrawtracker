@@ -48,6 +48,14 @@ open http://localhost:8000
 
 GitHub Pages → Settings → Pages → Source: `main` branch, `/docs` folder. Push and it's live.
 
+## Automation
+
+`.github/workflows/update.yml` runs the full pipeline every Friday at 13:00 UTC and on-demand via the Actions tab. It discovers new Chop Sessions, pulls their captions, extracts items, and refreshes news updates on any item whose `updates_fetched_at` is more than 7 days old. Changes get committed back to `main`, which triggers a GH Pages redeploy.
+
+Setup once:
+- Repo Settings → Secrets and variables → Actions → **New repository secret**
+- Name `ANTHROPIC_API_KEY`, value your `sk-ant-...` key
+
 ## Layout
 
 ```

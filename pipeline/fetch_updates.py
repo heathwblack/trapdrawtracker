@@ -11,7 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import date
+from datetime import date, timedelta
 
 from anthropic import Anthropic
 
@@ -94,7 +94,9 @@ def fetch_updates_for_item(client: Anthropic, item: dict, today_iso: str) -> dic
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--force", action="store_true", help="Re-fetch updates for every item.")
+    parser.add_argument("--force", action="store_true", help="Re-fetch updates for every item regardless of age.")
+    parser.add_argument("--max-age-days", type=int, default=7,
+                        help="Re-fetch items whose updates are older than this (default 7).")
     parser.add_argument("--limit", type=int, default=0, help="Max items to process (0 = all).")
     parser.add_argument("--episode", type=int, default=0, help="Only process items for this episode number.")
     args = parser.parse_args()
@@ -105,8 +107,20 @@ def main() -> None:
     store = json.loads(ITEMS_PATH.read_text())
     client = Anthropic(api_key=ANTHROPIC_API_KEY)
     today = date.today().isoformat()
+    stale_cutoff = date.today() - timedelta(days=args.max_age_days)
 
-    targets = [i for i in store["items"] if args.force or "updates_fetched_at" not in i]
+    def needs_fetch(item: dict) -> bool:
+        if args.force:
+            return True
+        last = item.get("updates_fetched_at")
+        if not last:
+            return True
+        try:
+            return date.fromisoformat(last) < stale_cutoff
+        except ValueError:
+            return True
+
+    targets = [i for i in store["items"] if needs_fetch(i)]
     if args.episode:
         targets = [i for i in targets if i["episode"] == args.episode]
     if args.limit:

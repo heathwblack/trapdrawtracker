@@ -58,18 +58,13 @@ function matches(item) {
 
 function sorted(items) {
   const by = state.sort;
-  const epDate = n => episodeFor(n)?.date ?? "";
   const copy = items.slice();
-  if (by === "ep-desc") {
-    copy.sort((a, b) => b.episode - a.episode || a.timestamp_sec - b.timestamp_sec);
-  } else if (by === "ep-asc") {
+  if (by === "ep-asc") {
     copy.sort((a, b) => a.episode - b.episode || a.timestamp_sec - b.timestamp_sec);
-  } else if (by === "date-desc") {
-    copy.sort((a, b) => epDate(b.episode).localeCompare(epDate(a.episode)) || a.timestamp_sec - b.timestamp_sec);
-  } else if (by === "date-asc") {
-    copy.sort((a, b) => epDate(a.episode).localeCompare(epDate(b.episode)) || a.timestamp_sec - b.timestamp_sec);
   } else if (by === "updates") {
-    copy.sort((a, b) => (hasUpdates(b) ? 1 : 0) - (hasUpdates(a) ? 1 : 0) || b.episode - a.episode);
+    copy.sort((a, b) => (hasUpdates(b) ? 1 : 0) - (hasUpdates(a) ? 1 : 0) || b.episode - a.episode || a.timestamp_sec - b.timestamp_sec);
+  } else {
+    copy.sort((a, b) => b.episode - a.episode || a.timestamp_sec - b.timestamp_sec);
   }
   return copy;
 }

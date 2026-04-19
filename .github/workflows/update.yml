@@ -1,0 +1,60 @@
+name: weekly update
+
+on:
+  schedule:
+    # Every Friday at 13:00 UTC (9am ET during DST, 8am ET during standard time)
+    - cron: "0 13 * * 5"
+  workflow_dispatch:
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install yt-dlp
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y yt-dlp
+
+      - name: Install Python deps
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Discover episodes
+        run: python3 -m pipeline.fetch_feed
+
+      - name: Fetch captions
+        run: python3 -m pipeline.fetch_captions
+
+      - name: Extract monitoring items
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 -m pipeline.extract
+
+      - name: Refresh news updates (staleness: 7 days)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 -m pipeline.fetch_updates --max-age-days 7
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/items.json data/transcripts/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "weekly update: refresh items + news ($(date -u +%Y-%m-%d))"
+            git push
+          fi
