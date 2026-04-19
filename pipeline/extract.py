@@ -110,6 +110,8 @@ TRANSCRIPT_REPLACEMENTS = [
     (re.compile(r"\bsully\b", re.IGNORECASE), "Soly"),
     (re.compile(r"\bsawly\b", re.IGNORECASE), "Soly"),
     (re.compile(r"\bd\.?\s*j\.?\s*pie\b", re.IGNORECASE), "DJ Pie"),
+    (re.compile(r"\bma(?:y|i)[aeou]*l?pa\b", re.IGNORECASE), "mea culpa"),
+    (re.compile(r"\bmeola[\s-]?pa\b", re.IGNORECASE), "mea culpa"),
 ]
 
 
