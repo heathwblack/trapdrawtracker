@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trap Draw Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Trap Draw Tracker</h1>
+    <p class="subtitle">What the <em>Chop Session</em> crew is monitoring. 2026 episodes.</p>
+  </header>
+
+  <section class="controls">
+    <input id="search" type="search" placeholder="search title, POV, quote…" />
+    <select id="episode"><option value="">all episodes</option></select>
+    <select id="category"><option value="">all categories</option></select>
+  </section>
+
+  <main>
+    <div id="count" class="count"></div>
+    <ul id="items" class="items"></ul>
+    <div id="empty" class="empty" hidden>No items match.</div>
+  </main>
+
+  <footer>
+    <a href="https://github.com/heathwblack/trapdrawtracker">source on github</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
