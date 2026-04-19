@@ -14,9 +14,20 @@
 
   <section class="controls">
     <input id="search" type="search" placeholder="search title, POV, quote…" />
-    <select id="topic"><option value="">all topics</option></select>
-    <select id="episode"><option value="">all episodes</option></select>
     <select id="category"><option value="">all categories</option></select>
+    <select id="episode"><option value="">all episodes</option></select>
+    <select id="updates">
+      <option value="">all items</option>
+      <option value="yes">has news since</option>
+      <option value="no">no news since</option>
+    </select>
+    <select id="sort">
+      <option value="ep-desc">newest episode first</option>
+      <option value="ep-asc">oldest episode first</option>
+      <option value="date-desc">newest date first</option>
+      <option value="date-asc">oldest date first</option>
+      <option value="updates">items with news first</option>
+    </select>
   </section>
 
   <main>

@@ -1,6 +1,10 @@
 const SPOTIFY_URL = id => `https://open.spotify.com/episode/${id}`;
 
-const state = { store: { episodes: [], items: [] }, filters: { q: "", topic: "", episode: "", category: "" } };
+const state = {
+  store: { episodes: [], items: [] },
+  filters: { q: "", episode: "", category: "", updates: "" },
+  sort: "ep-desc",
+};
 
 const el = (tag, attrs = {}, children = []) => {
   const node = document.createElement(tag);
@@ -35,16 +39,39 @@ function episodeLink(item) {
   return el("span", { class: "episode-link" }, label);
 }
 
+function hasUpdates(item) {
+  return Array.isArray(item.updates) && item.updates.length > 0;
+}
+
 function matches(item) {
-  const { q, topic, episode, category } = state.filters;
-  if (topic && item.topic !== topic) return false;
+  const { q, episode, category, updates } = state.filters;
   if (episode && String(item.episode) !== episode) return false;
   if (category && item.category !== category) return false;
+  if (updates === "yes" && !hasUpdates(item)) return false;
+  if (updates === "no" && hasUpdates(item)) return false;
   if (q) {
-    const hay = `${item.title} ${item.topic ?? ""} ${item.pov_summary} ${item.quote} ${item.status}`.toLowerCase();
+    const hay = `${item.title} ${item.pov_summary} ${item.quote} ${item.status}`.toLowerCase();
     if (!hay.includes(q.toLowerCase())) return false;
   }
   return true;
+}
+
+function sorted(items) {
+  const by = state.sort;
+  const epDate = n => episodeFor(n)?.date ?? "";
+  const copy = items.slice();
+  if (by === "ep-desc") {
+    copy.sort((a, b) => b.episode - a.episode || a.timestamp_sec - b.timestamp_sec);
+  } else if (by === "ep-asc") {
+    copy.sort((a, b) => a.episode - b.episode || a.timestamp_sec - b.timestamp_sec);
+  } else if (by === "date-desc") {
+    copy.sort((a, b) => epDate(b.episode).localeCompare(epDate(a.episode)) || a.timestamp_sec - b.timestamp_sec);
+  } else if (by === "date-asc") {
+    copy.sort((a, b) => epDate(a.episode).localeCompare(epDate(b.episode)) || a.timestamp_sec - b.timestamp_sec);
+  } else if (by === "updates") {
+    copy.sort((a, b) => (hasUpdates(b) ? 1 : 0) - (hasUpdates(a) ? 1 : 0) || b.episode - a.episode);
+  }
+  return copy;
 }
 
 function render() {
@@ -52,15 +79,15 @@ function render() {
   const countEl = document.getElementById("count");
   const empty = document.getElementById("empty");
   list.innerHTML = "";
-  const filtered = state.store.items.filter(matches);
-  countEl.textContent = `${filtered.length} of ${state.store.items.length} items`;
+  const filtered = sorted(state.store.items.filter(matches));
+  const withUpdates = filtered.filter(hasUpdates).length;
+  countEl.textContent = `${filtered.length} of ${state.store.items.length} items · ${withUpdates} with updates`;
   empty.hidden = filtered.length > 0;
   for (const item of filtered) {
     list.appendChild(
       el("li", { class: "item" }, [
         el("div", { class: "item-head" }, [
           el("h2", { class: "item-title" }, item.title),
-          item.topic ? el("span", { class: "badge topic" }, item.topic) : null,
           el("span", { class: "badge category" }, item.category),
           episodeLink(item),
         ]),
@@ -78,6 +105,7 @@ function renderUpdates(item) {
   const updates = item.updates ?? [];
   const summary = item.updates_summary ?? "";
   const wrapper = el("details", { class: "updates" });
+  if (updates.length > 0) wrapper.open = true;
   wrapper.appendChild(
     el("summary", { class: "updates-summary" },
       updates.length > 0
@@ -127,14 +155,6 @@ async function init() {
   }
   state.store = await res.json();
 
-  const topicCounts = new Map();
-  for (const i of state.store.items) {
-    if (!i.topic) continue;
-    topicCounts.set(i.topic, (topicCounts.get(i.topic) ?? 0) + 1);
-  }
-  const topics = [...topicCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  populateSelect("topic", topics.map(([t]) => t), t => `${t} (${topicCounts.get(t)})`);
-
   const epNumbers = [...new Set(state.store.items.map(i => i.episode))].sort((a, b) => b - a);
   populateSelect("episode", epNumbers, n => {
     const ep = episodeFor(n);
@@ -143,6 +163,14 @@ async function init() {
   const cats = [...new Set(state.store.items.map(i => i.category))].sort();
   populateSelect("category", cats);
 
+  document.getElementById("updates").addEventListener("change", e => {
+    state.filters.updates = e.target.value;
+    render();
+  });
+  document.getElementById("sort").addEventListener("change", e => {
+    state.sort = e.target.value;
+    render();
+  });
   document.getElementById("search").addEventListener("input", e => {
     state.filters.q = e.target.value;
     render();

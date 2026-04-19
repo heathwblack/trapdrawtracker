@@ -13,6 +13,12 @@ from pipeline.config import ANTHROPIC_API_KEY, ANTHROPIC_MODEL, ITEMS_PATH
 from pipeline.fetch_captions import transcript_path
 from pipeline.fetch_feed import Episode, fetch_episodes
 
+CATEGORIES = [
+    "golf", "nfl", "nba", "mlb", "college-hoops", "other-sports",
+    "air-travel", "food-and-drink", "crime-and-politics", "world-news",
+    "media-and-entertainment", "tech-and-business", "show-bits", "other",
+]
+
 SYSTEM_PROMPT = """You analyze transcripts of "Chop Session" episodes from the Trap Draw podcast (No Laying Up). The hosts — Big, Soly, DJ Pie, TC, Neil, Randy, and rotating guests — run through a mix of golf news, sports stories, world/culture happenings, and running bits.
 
 Chop Sessions frequently include an explicit segment called the "monitoring list" where the hosts review ongoing stories they're watching. Your job is to extract ALL monitoring items from the episode — both the literal "monitoring list" segment if present, AND any other substantive topic the hosts discuss with a distinct point of view elsewhere in the episode.
@@ -36,8 +42,21 @@ EXCLUDE:
 
 For each monitoring item, return:
 - title: 5–10 words, snappy and specific (e.g. "Mt Everest insurance fraud scheme", not "Mountaineering news")
-- topic: a short 1–4 word canonical tag that groups related stories across episodes. Use Title Case. Reuse tags when a new item fits an existing one. Examples: "LIV Golf", "PGA Tour", "Ryder Cup", "NFL Playoffs", "MLB Hot Stove", "Things That Are Sick", "College Football", "Course Architecture", "NBA", "Formula 1", "Mountaineering", "Crime & Scandal", "Media & TV". Prefer reusing a well-known tag over coining a new one; only create a new tag if nothing existing fits.
-- category: one of golf, sports, world-news, culture, business, other
+- category: EXACTLY one of the following enum values:
+    * golf — any golf content (Tour, players, course architecture, LIV, majors, rules)
+    * nfl — any NFL content (games, draft, playoffs, coaching carousel, free agency, gossip)
+    * nba — any NBA content
+    * mlb — any MLB/baseball content (incl. World Baseball Classic)
+    * college-hoops — college basketball including March Madness, conference stuff
+    * other-sports — NHL, tennis, F1, soccer, Olympics, college football, any other sport
+    * air-travel — airlines, airports, flying, aviation
+    * food-and-drink — restaurants, CPG products, grocery, dining
+    * crime-and-politics — crime stories, politicians, government, scandals, indictments
+    * world-news — international affairs, geopolitics, weather, natural disasters
+    * media-and-entertainment — TV, movies, books, music, podcasts, celebrity drama
+    * tech-and-business — tech companies, AI, crypto, business deals, corporate fiascos
+    * show-bits — recurring podcast segments like "Things That Are Sick", running jokes, self-referential bits
+    * other — anything that genuinely doesn't fit above (use sparingly)
 - timestamp_sec: integer seconds into the episode where the discussion begins
 - pov_summary: 2–3 sentences in the hosts' voice capturing their actual take — what they think, not a neutral summary
 - status: forward-looking status from the hosts' perspective ("ongoing investigation, hosts skeptical", "waiting on next court date", "appears resolved but they're not sure", etc.)
@@ -58,20 +77,16 @@ TOOL = {
                     "type": "object",
                     "properties": {
                         "title": {"type": "string"},
-                        "topic": {
-                            "type": "string",
-                            "description": "Short 1-4 word canonical tag in Title Case, reused across related items.",
-                        },
                         "category": {
                             "type": "string",
-                            "enum": ["golf", "sports", "world-news", "culture", "business", "other"],
+                            "enum": CATEGORIES,
                         },
                         "timestamp_sec": {"type": "integer"},
                         "pov_summary": {"type": "string"},
                         "status": {"type": "string"},
                         "quote": {"type": "string"},
                     },
-                    "required": ["title", "topic", "category", "timestamp_sec", "pov_summary", "status", "quote"],
+                    "required": ["title", "category", "timestamp_sec", "pov_summary", "status", "quote"],
                 },
             }
         },
@@ -91,12 +106,25 @@ def _format_timestamp(seconds: int) -> str:
     return f"{h}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}"
 
 
+TRANSCRIPT_REPLACEMENTS = [
+    (re.compile(r"\bsully\b", re.IGNORECASE), "Soly"),
+    (re.compile(r"\bsawly\b", re.IGNORECASE), "Soly"),
+    (re.compile(r"\bd\.?\s*j\.?\s*pie\b", re.IGNORECASE), "DJ Pie"),
+]
+
+
+def _clean_text(text: str) -> str:
+    for pat, sub in TRANSCRIPT_REPLACEMENTS:
+        text = pat.sub(sub, text)
+    return text
+
+
 def _flatten_transcript(transcript_json: dict) -> str:
     lines: list[str] = []
     for seg in transcript_json.get("transcription", []):
         start_ms = seg.get("offsets", {}).get("from", 0)
         secs = start_ms // 1000
-        text = seg.get("text", "").strip()
+        text = _clean_text(seg.get("text", "").strip())
         if text:
             lines.append(f"[{_format_timestamp(secs)}] {text}")
     return "\n".join(lines)
@@ -161,7 +189,6 @@ def upsert_episode(store: dict, ep: Episode, extracted: list[dict]) -> None:
             "episode": ep.number,
             "episode_date": ep.date,
             "title": raw["title"],
-            "topic": raw["topic"],
             "category": raw["category"],
             "timestamp_sec": ts,
             "timestamp_display": _format_timestamp(ts),
