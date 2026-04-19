@@ -59,19 +59,6 @@
   ],
   "items": [
     {
-      "id": "377-goosey-s-oj-simpson-jersey-saga",
-      "episode": 377,
-      "episode_date": "2026-01-08",
-      "title": "Goosey's OJ Simpson jersey saga",
-      "topic": "Shuster Family",
-      "category": "culture",
-      "timestamp_sec": 88,
-      "timestamp_display": "01:28",
-      "pov_summary": "Randy got his son Goosey an OJ Simpson Bills jersey for Christmas, which horrified his mother Peg and amused his wife. Randy's leaning into it \u2014 joking about buying Javarus Kittinden, Lawrence Taylor, or Aaron Hernandez jerseys next. TC wants field reports on strangers' reactions when Goosey wears it around the neighborhood.",
-      "status": "ongoing, awaiting public reactions; jersey benched this week due to Jags-Bills game",
-      "quote": "Her exact words were like, 'Randy is right. I am pissed.' Like, 'That's ridiculous.'"
-    },
-    {
       "id": "377-global-hotspots-monitoring-roundup",
       "episode": 377,
       "episode_date": "2026-01-08",
@@ -82,7 +69,60 @@
       "timestamp_display": "03:43",
       "pov_summary": "The hosts are staying vigilant on a busy slate of international situations \u2014 Venezuela kicked off the monitoring new year, they've been tracking Iran for months, and Greenland is percolating again. They feel a bit worn out but committed to staying on top of it all.",
       "status": "ongoing, multiple fronts active",
-      "quote": "We're going to stay vigilant, though. We've been tracking Iran for months now. Yeah. Uh looks like Greenland is percolating again."
+      "quote": "We're going to stay vigilant, though. We've been tracking Iran for months now. Yeah. Uh looks like Greenland is percolating again.",
+      "updates_summary": "Major developments across all three hotspots since the Jan 8 episode. Venezuela: U.S. forces captured Maduro on Jan 3 in \"Operation Absolute Resolve,\" with VP Delcy Rodr\u00edguez now running an interim government under U.S. pressure and Washington taking control of Venezuelan oil sales. Greenland: Trump escalated annexation pressure through January (tariff threats, refusing to rule out military force), then backed down at Davos after talks with NATO's Rutte, though he revived attacks in April amid NATO rifts over the new Iran war. Iran: A U.S.-Israeli war with Iran broke out in roughly late February/early March and, as of early April, was under a fragile two-week ceasefire.",
+      "updates": [
+        {
+          "date": "2026-01-07",
+          "headline": "U.S. Captures Maduro in 'Operation Absolute Resolve'",
+          "source": "Human Rights Watch",
+          "summary": "U.S. military struck Venezuela and took President Nicol\u00e1s Maduro and his wife Cilia Flores into custody on January 3, 2026, with strikes reportedly killing dozens of Venezuelan military officers, at least two civilians, and 32 Cuban officers. Maduro was transported to New York and arraigned on narco-terrorism charges.",
+          "url": "https://www.hrw.org/news/2026/01/07/venezuela-us-risks-rights-disaster"
+        },
+        {
+          "date": "2026-01-08",
+          "headline": "U.S. to Control Venezuelan Oil Sales 'Indefinitely'",
+          "source": "Al Jazeera",
+          "summary": "Energy Secretary Chris Wright said the U.S. would market Venezuela's sanctioned oil and control future sales, with proceeds held in U.S. Treasury accounts to be shared with Caracas. The Trump administration also announced a deal to 'turn over' 30-50 million barrels of sanctioned Venezuelan crude.",
+          "url": "https://www.aljazeera.com/economy/2026/1/8/venezuelas-economy-plunged-into-uncertainty-after-maduro-abduction"
+        },
+        {
+          "date": "2026-01-08",
+          "headline": "Delcy Rodr\u00edguez Sworn In as Interim Venezuelan President",
+          "source": "CFR Global Conflict Tracker",
+          "summary": "Vice President Delcy Rodr\u00edguez was sworn in as Venezuela's interim president as authorities declared a national state of emergency. The International Crisis Group notes hardliners like Diosdado Cabello retain key ministries, complicating prospects for a democratic transition.",
+          "url": "https://www.cfr.org/global-conflict-tracker/conflict/instability-venezuela"
+        },
+        {
+          "date": "2026-01-21",
+          "headline": "Trump Backs Down on Greenland at Davos After Rutte Talks",
+          "source": "UK Parliament / Wikipedia",
+          "summary": "After threatening a 25% tariff on Denmark and several European nations and refusing to rule out military force, Trump reversed course at the World Economic Forum following discussions with NATO Secretary General Mark Rutte, pledging not to use tariffs or force to annex Greenland. Diplomatic talks between the U.S., Denmark, and Greenland launched in late January.",
+          "url": "https://en.wikipedia.org/wiki/Greenland_crisis"
+        },
+        {
+          "date": "2026-04-09",
+          "headline": "Trump Revives Greenland Attacks Amid NATO Rift Over Iran War",
+          "source": "CNBC / Al Jazeera",
+          "summary": "Trump called Greenland a 'big, poorly run, piece of ice' on Truth Social after NATO allies declined to support the U.S.-Israeli war on Iran. The Pentagon is reportedly in talks with Denmark for access to three additional bases in Greenland \u2014 the first U.S. military expansion there in decades.",
+          "url": "https://www.cnbc.com/2026/04/09/trump-greenland-nato-rift-iran-war-deepens.html"
+        },
+        {
+          "date": "2026-04-15",
+          "headline": "Greenland PM Says Citizens 'Don't Feel Safe' Under Trump Pressure",
+          "source": "NBC News",
+          "summary": "Prime Minister Jens-Frederik Nielsen told NBC that many Greenlanders are scared and angered by Trump's ongoing rhetoric, and that he does not believe Trump has taken ownership or control of Greenland off the table despite having walked back the invasion threat.",
+          "url": "https://www.nbcnews.com/politics/politics-news/greenland-prime-minister-citizens-dont-feel-safe-trump-threats-nato-rcna331857"
+        },
+        {
+          "date": "2026-04-09",
+          "headline": "U.S.-Israel Iran War Enters Fragile Two-Week Ceasefire",
+          "source": "CNBC",
+          "summary": "After more than a month of fighting, Trump announced a two-week ceasefire with Iran, though Iran's parliamentary speaker accused Washington of violating terms within 24 hours. Several NATO members had denied U.S. aircraft the use of their airspace and declined naval contributions, fueling Trump's NATO grievances.",
+          "url": "https://www.cnbc.com/2026/04/09/trump-greenland-nato-rift-iran-war-deepens.html"
+        }
+      ],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-gas-tank-arrow-and-flying-v-formations",
@@ -95,7 +135,18 @@
       "timestamp_display": "06:21",
       "pov_summary": "DJ nominated the little arrow on the gas gauge that shows which side your tank is on \u2014 big's a fan, though he suspects plenty of drivers have no idea it exists. Also sick: geese/duck flying V formations, and Airbus and Delta researching flying-V formations across the Atlantic to save fuel.",
       "status": "active nominations, committee reviewing",
-      "quote": "Flying Vs are sick. And I know Airbus and Delta are trying to research like a flying formation across the Atlantic to save fuel."
+      "quote": "Flying Vs are sick. And I know Airbus and Delta are trying to research like a flying formation across the Atlantic to save fuel.",
+      "updates_summary": "Not much new specifically on fello'fly/GEESE formation-flying trials since the January 8, 2026 episode \u2014 the main milestone (completion of GEESE rendezvous flight trials over the North Atlantic with Delta and Virgin Atlantic) was announced in December 2025, just before the episode aired. Airbus's next round of flight tests is planned for later in 2026, with commercial deployment expected in the first half of the 2030s. A tangentially related NASA fuel-saving aerodynamics test (CATNLF) hit a milestone in January 2026.",
+      "updates": [
+        {
+          "date": "2026-01-12",
+          "headline": "NASA tests laminar-flow wing tech that could cut commercial aircraft fuel burn",
+          "source": "NASA",
+          "url": "https://www.nasa.gov/centers-and-facilities/armstrong/nasa-tests-technology-offering-potential-fuel-savings-for-commercial-aviation/",
+          "summary": "NASA completed a high-speed taxi test of its Cross Flow Attenuated Natural Laminar Flow (CATNLF) scale model mounted to an F-15B at Armstrong Flight Research Center, reaching about 144 mph. The design aims to reduce drag on swept wings and could save fuel on future commercial aircraft \u2014 another biomimicry-adjacent efficiency play in the same spirit as fello'fly."
+        }
+      ],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-rollerblading-goal-execution-update",
@@ -108,7 +159,10 @@
       "timestamp_display": "15:00",
       "pov_summary": "Randy actually followed through \u2014 ordered XL rollerblades (only option for size 14+ feet), got them Jan 2, and knocked out two laps at Wash Park on day one with helmet and wrist guards. Felt it come back quickly, likened it to speed skating, and plans to go again before the cold snap. Counting it a smashing success.",
       "status": "goal in active execution; equipment acquired, first outing complete",
-      "quote": "I think it was a smashing success. Honestly, I might go out today or tomorrow afternoon."
+      "quote": "I think it was a smashing success. Honestly, I might go out today or tomorrow afternoon.",
+      "updates_summary": "This is a personal goal/life update from Randy on the podcast, not a topic that generates external news coverage. No meaningful developments to report between the episode airing and today.",
+      "updates": [],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-tc-s-tennis-comeback-and-neil-match",
@@ -121,7 +175,10 @@
       "timestamp_display": "20:44",
       "pov_summary": "TC is buying a new tennis racket tonight and plans to play Neil in the Dominican Republic next week on a film shoot. He hasn't played in a decade and expects to get smoked, but he's trying to get back on the wagon. Year of gut, maybe synthetic gut strings.",
       "status": "match scheduled next week in DR; racket TBD",
-      "quote": "I mean, he'll smoke me, but uh I'm trying to get back on the wagon."
+      "quote": "I mean, he'll smoke me, but uh I'm trying to get back on the wagon.",
+      "updates_summary": "No meaningful news developments found on this topic. TC's tennis comeback and his planned match with Neil in the Dominican Republic is a personal podcast storyline that wouldn't generate outside press coverage \u2014 any follow-up would appear in a subsequent TrapDraw episode rather than in news outlets.",
+      "updates": [],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-buffalo-jake-liver-transplant-recovery",
@@ -134,7 +191,10 @@
       "timestamp_display": "21:55",
       "pov_summary": "Jake TGO (Buffalo Jake) is up and alert out of liver transplant surgery and already listening to the goals podcast. The hosts are thrilled \u2014 Matt Golden is producing a documentary on Jake that they'll publicize later this year.",
       "status": "post-surgery recovery looking good",
-      "quote": "He's up and alert uh out of his liver transplant surgery. He's listening to the goals podcast right now."
+      "quote": "He's up and alert uh out of his liver transplant surgery. He's listening to the goals podcast right now.",
+      "updates_summary": "No substantive public news developments on Buffalo Jake's (Jake TGO) liver transplant recovery or the Matt Golden-produced documentary were found between the episode air date (Jan 8, 2026) and April 18, 2026. Updates on this community story appear to be circulating within the Trap Draw/golf community circles rather than in indexed news sources.",
+      "updates": [],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-newark-terminal-a-over-laguardia",
@@ -161,19 +221,6 @@
       "pov_summary": "After ~20 years in a brutal two-QB auction keeper league, Randy finally won it all \u2014 team name Balco, and he thinks Vic Conte (who passed in November) was pulling strings from above. Also won the rare Oil Bowl in week 18. Kamish returned to league management. Meanwhile THG finished last.",
       "status": "champion crowned; Randy savoring it",
       "quote": "I can't help but think maybe Vic Ky was pulling some strings from up above. Pour pouring some clear and the cream out."
-    },
-    {
-      "id": "377-heated-rivalry-hbo-show-obsession",
-      "episode": 377,
-      "episode_date": "2026-01-08",
-      "title": "Heated Rivalry HBO show obsession",
-      "topic": "Media & TV",
-      "category": "culture",
-      "timestamp_sec": 2095,
-      "timestamp_display": "34:55",
-      "pov_summary": "Big's wife is uniquely obsessed with Heated Rivalry, an HBO show about two gay hockey players in a romance. Bill Simmons says it's huge with 'the girls and the gays.' Big is tipping TC off to ask Alex about it \u2014 apparently the first two episodes border on smut.",
-      "status": "cultural phenomenon, spreading through trap-adjacent households",
-      "quote": "When I tell you my wife is obsessed with it, TC, like honestly like no other show that I can think of in our four years of knowing each other."
     },
     {
       "id": "377-cabbage-caper-lemon-recipe-becomes-identity",
@@ -982,19 +1029,6 @@
       "quote": "You know what a sick one would be would be balloon boy... the whole Balloon Boy scandal from start to finish. What happened? Where are they now?"
     },
     {
-      "id": "383-sfo-and-united-family-travel-debacle",
-      "episode": 383,
-      "episode_date": "2026-02-20",
-      "title": "SFO and United family travel debacle",
-      "topic": "Air Travel",
-      "category": "business",
-      "timestamp_sec": 1080,
-      "timestamp_display": "18:00",
-      "pov_summary": "TC apologizes to Kira Dixon for pushing her to stick with United after his family's JAX-Denver flight was delayed 10.5 hours on President's Day weekend and United initially couldn't rebook until Tuesday. SFO consistently fails and has mediocre frontline workers \u2014 lesson is to trust the local perspective.",
-      "status": "family arrived ~30 hours late, TC eating crow",
-      "quote": "SFO never fails to fail really. It's consistently the one hub that they just don't have good frontline workers there."
-    },
-    {
       "id": "383-denver-airport-price-gouging-expos",
       "episode": 383,
       "episode_date": "2026-02-20",
@@ -1240,19 +1274,6 @@
       "pov_summary": "DJ's Oscars pod is imminent. Early verdict: Frankenstein is a nothing burger, F1 getting a Best Picture nom is classic 'was it good? no, did you enjoy it? yes' territory. He understands the 10-nominee logic (helps fringe films like Train Dreams, Sentimental Value get seen) but thinks it lets in slop like F1, Wicked, or Top Gun Maverick. Mercifully Avatar and Wicked didn't make it this year.",
       "status": "pod recording on the books",
       "quote": "Best picture feels a little questionable... occasionally you get a Top Gun Maverick or F1 or Avatar Wicked or whatever that slips in that's like, all right, well, we didn't need to do this."
-    },
-    {
-      "id": "385-randy-returns-from-paternity-leave-with-baby-lily",
-      "episode": 385,
-      "episode_date": "2026-03-05",
-      "title": "Randy returns from paternity leave with baby Lily",
-      "topic": "Randy Dad Life",
-      "category": "other",
-      "timestamp_sec": 840,
-      "timestamp_display": "14:00",
-      "pov_summary": "Randy is back after welcoming baby Lillian on January 27th and he's deep in the newborn fog \u2014 bonding is slowly building, diapers don't faze him, and his wife is doing the heavy lifting. He found stepping fully away from work harder than expected and is glad to rebuild a routine. Every day is cooler than the last.",
-      "status": "ongoing, Randy easing back into work",
-      "quote": "It's one of those things where... I'm kind of like late to the party with with having kids, but the just kind of the mental transformation is really uh it's something."
     },
     {
       "id": "385-tc-loses-190-curated-safari-tabs-wiping-old-phone",
@@ -2006,7 +2027,10 @@
       "timestamp_display": "11:27",
       "pov_summary": "TC had a disastrous Cracker Barrel experience on the drive back from Atlanta \u2014 out of chicken and dumplings, nasty manager, wouldn't let his kid use the bathroom, food awful at the second location too. He's questioning whether he'll ever step into another Cracker Barrel and sees it as a symbol of broader American decline. Wants Drew to investigate Knoxville-area locations.",
       "status": "TC despondent, considering boycott",
-      "quote": "That's where we're at where we can't even get Cracker Barrel right anymore. It's not good."
+      "quote": "That's where we're at where we can't even get Cracker Barrel right anymore. It's not good.",
+      "updates_summary": "No new developments directly tied to TC's I-75 Cracker Barrel saga appeared in the 48 hours between the episode airing and today. Broader context remains consistent with the hosts' take: the chain has been posting steep sales declines, a Tennessee location recently failed a health inspection, and the brand has spent 2026 continuing to alienate its core customers \u2014 but nothing new broke in the April 16\u201318 window.",
+      "updates": [],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "391-uganda-chimpanzee-civil-war-splits-group",
@@ -2019,7 +2043,25 @@
       "timestamp_display": "20:14",
       "pov_summary": "The hosts are fascinated by this Wall Street Journal/NYT story about a once-cohesive 200-chimp group in Uganda's Kabale National Park fracturing into warring western, central, and eastern clusters. They're treating it as the biggest story on the docket \u2014 practically a World War II-level event \u2014 and are actively debating which faction to align with. Too early to pick a side, but they're locked in on new alpha 'Big Mort' Morton.",
       "status": "ongoing, hosts not yet ready to declare an alliance",
-      "quote": "The chimpanzee civil war thing... that's like one A right there."
+      "quote": "The chimpanzee civil war thing... that's like one A right there.",
+      "updates_summary": "No substantively new developments between April 16-18, 2026. Coverage in this window (Mongabay follow-up, Down to Earth summary, Wikipedia updates) largely repackages the April 9 Science study findings without new field observations or casualties reported. One minor clarifying detail surfaced in follow-up coverage: the hosts' interest in \"Big Mort\" Morton is worth noting because Morton was in fact killed by members of the Western group in 2024, per the University of Michigan's writeup accompanying the study.",
+      "updates": [
+        {
+          "date": "2026-04-17",
+          "headline": "Mongabay follow-up details 'relational dynamics hypothesis' and quarantine measures at Ngogo",
+          "source": "Mongabay",
+          "summary": "A day-after feature reiterates the Science study's framing and adds context that since a post-2017 human quarantine protocol was implemented at Ngogo, researchers have observed a drop in viral loads among the chimpanzees \u2014 a conservation angle not emphasized in earlier coverage.",
+          "url": "https://news.mongabay.com/2026/04/chimp-civil-war-follows-rare-community-split-in-a-ugandan-national-park/"
+        },
+        {
+          "date": "2026-04-18",
+          "headline": "Correction/clarification worth flagging for hosts: Morton is already dead",
+          "source": "University of Michigan News (pre-episode, but relevant)",
+          "summary": "The hosts said they were 'locked in on new alpha Big Mort Morton,' but the U-M release accompanying the study notes Morton was a member of the Central group and was killed by Western group members in 2024 \u2014 so he cannot be the current alpha to back. Garrison, his pre-split friend, is in the dominant Western faction.",
+          "url": "https://news.umich.edu/from-friend-to-foe-after-a-chimpanzee-group-split-chimps-began-killing-their-former-friends/"
+        }
+      ],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "391-uk-prisons-drones-delivering-contraband-uber-eats-style",

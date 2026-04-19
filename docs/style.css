@@ -128,6 +128,56 @@ main {
 }
 .status strong { color: var(--ink); font-weight: 600; }
 
+.updates {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+.updates-summary {
+  cursor: pointer;
+  color: var(--accent);
+  list-style: none;
+  padding: 0.25rem 0;
+  user-select: none;
+}
+.updates-summary::before {
+  content: "▸ ";
+  color: var(--muted);
+}
+.updates[open] .updates-summary::before {
+  content: "▾ ";
+}
+.updates-body {
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--panel-hi);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.updates-text {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+}
+.updates-list {
+  margin: 0;
+  padding-left: 1rem;
+}
+.updates-list li {
+  margin-bottom: 0.5rem;
+}
+.updates-list a {
+  color: var(--ink);
+}
+.updates-list a:hover {
+  color: var(--accent);
+}
+.updates-meta {
+  color: var(--muted);
+}
+.updates-item-sum {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+}
+
 .empty {
   color: var(--muted);
   text-align: center;

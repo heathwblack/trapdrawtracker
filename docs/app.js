@@ -66,10 +66,46 @@ function render() {
         ]),
         el("p", { class: "pov" }, item.pov_summary),
         item.quote ? el("blockquote", { class: "quote" }, `"${item.quote}"`) : null,
-        el("div", { class: "status" }, [el("strong", {}, "status: "), item.status]),
+        el("div", { class: "status" }, [el("strong", {}, "hosts' status: "), item.status]),
+        renderUpdates(item),
       ])
     );
   }
+}
+
+function renderUpdates(item) {
+  if (!item.updates_fetched_at) return null;
+  const updates = item.updates ?? [];
+  const summary = item.updates_summary ?? "";
+  const wrapper = el("details", { class: "updates" });
+  wrapper.appendChild(
+    el("summary", { class: "updates-summary" },
+      updates.length > 0
+        ? `news since · ${updates.length} update${updates.length === 1 ? "" : "s"}`
+        : "news since · none"
+    )
+  );
+  const body = el("div", { class: "updates-body" });
+  if (summary) body.appendChild(el("p", { class: "updates-text" }, summary));
+  if (updates.length) {
+    const ul = el("ul", { class: "updates-list" });
+    for (const u of updates) {
+      const headline = u.url
+        ? el("a", { href: u.url, target: "_blank", rel: "noopener" }, u.headline)
+        : el("span", {}, u.headline);
+      const meta = [u.source, u.date].filter(Boolean).join(" · ");
+      ul.appendChild(
+        el("li", {}, [
+          headline,
+          meta ? el("span", { class: "updates-meta" }, ` — ${meta}`) : null,
+          u.summary ? el("p", { class: "updates-item-sum" }, u.summary) : null,
+        ])
+      );
+    }
+    body.appendChild(ul);
+  }
+  wrapper.appendChild(body);
+  return wrapper;
 }
 
 function populateSelect(id, values, label = v => v) {
