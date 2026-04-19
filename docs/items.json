@@ -715,7 +715,18 @@
       "timestamp_display": "1:20:47",
       "pov_summary": "A viral United first class meal post called out a 'bowl of sadness' with 3D-printed mystery meat, cafeteria cheese cubes, and an uncut whole tomato. Hosts concede it's a tough look \u2014 catering has improved overall but clearly still has work to do. Big also separately gripes about Jacksonville's new Premier Access self-checkin kiosk being low-rent.",
       "status": "ongoing PR headache for United",
-      "quote": "Between the 3D printed mystery meat, the cafeteria cheese cubes, and the whole tomato that I needed chainsaw to cut, this is genuinely unbelievable."
+      "quote": "Between the 3D printed mystery meat, the cafeteria cheese cubes, and the whole tomato that I needed chainsaw to cut, this is genuinely unbelievable.",
+      "updates_summary": "The viral \"bowl of sadness\" moment peaked in early January 2026 just before the episode aired, and there's been no meaningful follow-up specifically on that incident since (no refund news, no formal catering overhaul tied to it). However, United did roll out premium-product news in March 2026 \u2014 pricing details for the new \"Polaris Studio\" emphasizing elevated food and beverage \u2014 which is tangentially relevant to the hosts' point that catering still has work to do at the top end.",
+      "updates": [
+        {
+          "date": "2026-03-20",
+          "headline": "Pricing Revealed: New United \"Polaris Studio\" Will Offer Champagne, Caviar, More Space",
+          "source": "Live and Let's Fly",
+          "summary": "United unveiled pricing and details for its new Polaris Studio suite, leaning into an elevated premium food and beverage experience (champagne, caviar) \u2014 a possible response to ongoing criticism that its premium catering doesn't match competitors.",
+          "url": "https://liveandletsfly.com/united-airlines-catering-meltdown-sfo/"
+        }
+      ],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-eric-adams-departs-to-dubai-and-crypto",
@@ -727,7 +738,46 @@
       "timestamp_display": "1:25:29",
       "pov_summary": "Eric Adams left office Jan 1, immediately flew to Dubai (disappointing he didn't hit Istanbul first), and announced he'll use cryptocurrency to go after violence, educate children, and fight anti-semitism. Hosts will miss him \u2014 don't think this is the last we've heard.",
       "status": "out of office but hosts expect a sequel",
-      "quote": "He's going to be using cryptocurrency to go after violence, educate our children, and deal with anti-semitism."
+      "quote": "He's going to be using cryptocurrency to go after violence, educate our children, and deal with anti-semitism.",
+      "updates_summary": "The hosts were right that we hadn't heard the last of Adams. Days after the episode, Adams held a Times Square press conference launching \"NYC Token,\" a meme coin that quickly hit a $580-600M market cap before crashing roughly 75-80%, with blockchain analysts accusing the project of a \"rug pull.\" Adams denied profiting, but reporting revealed his former chief adviser Frank Carone and a real-estate investor linked to Israeli hotels were behind the launch, while a separate entrepreneur claimed Adams hijacked his trademarked \"NYC Token\" name.",
+      "updates": [
+        {
+          "date": "2026-01-12",
+          "headline": "Adams launches 'NYC Token' in Times Square after Dubai/Congo trip",
+          "source": "THE CITY",
+          "summary": "Less than two weeks after leaving office, Adams announced a crypto coin with undisclosed backers, saying profits would fight antisemitism and 'anti-Americanism.' He confirmed he'd just returned from Dubai and the DRC, and said he'd be 'setting up some companies' and working with international business partners.",
+          "url": "https://www.thecity.nyc/2026/01/12/eric-adams-crypto-coin-token/"
+        },
+        {
+          "date": "2026-01-13",
+          "headline": "NYC Token crashes ~75% after launch; rug pull accusations fly",
+          "source": "Washington Post / DNYUZ",
+          "summary": "After surging to roughly a $580-600M market cap, NYC Token collapsed within hours once a wallet tied to its creation pulled ~$2.5M in liquidity (adding back only $1.5M). Bubblemaps CEO Nicolas Vaiman called it 'such an obvious rug'; Adams' team denied wrongdoing.",
+          "url": "https://dnyuz.com/2026/01/14/eric-adamss-crypto-coin-crashes-soon-after-launch-sparking-scam-accusations/"
+        },
+        {
+          "date": "2026-01-13",
+          "headline": "Tech entrepreneur says Adams hijacked his trademarked 'NYC Token' name",
+          "source": "THE CITY",
+          "summary": "Eddie Cullen, founder of crypto company Crescite, says he pitched the NYC Token concept to Adams' administration months earlier and holds a July trademark on the name. He plans to send a cease-and-desist.",
+          "url": "https://www.thecity.nyc/2026/01/13/eric-adams-crypto-coin-scam-trademark/"
+        },
+        {
+          "date": "2026-01-15",
+          "headline": "AP: Frank Carone and Israeli real-estate investor Yosef Sefi Zvieli behind the token",
+          "source": "ABC News / AP",
+          "summary": "Reporting revealed Adams' former chief adviser Frank Carone was closely involved in the launch, along with Carone's former client Yosef Sefi Zvieli, a real estate investor tied to Israeli hotels and a controversial Brooklyn homeless shelter. Brock Pierce said he was only looped in after launch and would have assembled 'more qualified' people.",
+          "url": "https://abcnews.go.com/US/wireStory/inside-botched-launch-nyc-mayor-eric-adams-new-129255895"
+        },
+        {
+          "date": "2026-01-15",
+          "headline": "Adams' team formally denies profiting from NYC Token",
+          "source": "CoinDesk",
+          "summary": "Through spokesperson Todd Shapiro, Adams insisted he did not move investor funds or profit from the launch, calling reports otherwise 'false and unsupported by evidence,' even as on-chain analysts maintained developers netted roughly $1M.",
+          "url": "https://www.coindesk.com/markets/2026/01/15/former-bitcoin-mayor-eric-adams-denies-profiting-from-nyc-token-after-80-crash"
+        }
+      ],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-assad-living-large-in-russia",
@@ -739,7 +789,39 @@
       "timestamp_display": "1:26:56",
       "pov_summary": "NYT piece on Assad living it up in Russia, plus an accompanying piece on him screwing over his own generals and personal assistant financially after dragging them to Moscow. Hosts joke about sending Urban to Russia and appointing Assad to the New College board as a life-swap.",
       "status": "ongoing exile coverage",
-      "quote": "There's the Assad one and there's the accompanying piece talking about all of his generals and how he kind of pulled the rug from his like personal assistant."
+      "quote": "There's the Assad one and there's the accompanying piece talking about all of his generals and how he kind of pulled the rug from his like personal assistant.",
+      "updates_summary": "Since the January 8 episode, the biggest development has been Syrian President Ahmed al-Sharaa's second Moscow visit on January 28, 2026, where Assad's extradition was again raised (and refused by the Kremlin), alongside Russia's withdrawal from the Qamishli airport. In February, Syria's Justice Minister publicly pushed extradition as part of transitional justice. Assad himself remains under strict Russian restrictions \u2014 no media, no politics \u2014 and reports continue describing his secluded luxury life in Rublyovka.",
+      "updates": [
+        {
+          "date": "2026-01-28",
+          "headline": "Al-Sharaa meets Putin in Moscow; Assad extradition again unresolved",
+          "source": "Al Jazeera",
+          "summary": "Syrian President Ahmed al-Sharaa made his second visit to Moscow, focused on Russia's military bases, while the Kremlin again declined to say whether it would extradite Assad. Al-Sharaa reiterated there would be justice for victims of Assad's repression.",
+          "url": "https://www.aljazeera.com/news/2026/1/28/syrias-al-sharaa-discusses-fate-of-russian-military-bases-with-putin"
+        },
+        {
+          "date": "2026-01-28",
+          "headline": "Russia withdraws from Qamishli airport in northeastern Syria",
+          "source": "FDD's Long War Journal",
+          "summary": "Russian forces pulled back from Qamishli airport as Sharaa visited Moscow, leaving Russia with only its two Mediterranean bases; Moscow continues refusing to hand over Assad despite Syrian demands.",
+          "url": "https://www.longwarjournal.org/archives/2026/01/russian-troops-begin-evacuating-from-northern-syria.php"
+        },
+        {
+          "date": "2026-02-22",
+          "headline": "Syrian Justice Minister pushes for Assad extradition",
+          "source": "Wikipedia (citing news reports)",
+          "summary": "Syrian Justice Minister Mazhar al-Wais said the government was pressing for the extradition of Assad and his allies as part of its transitional justice effort.",
+          "url": "https://en.wikipedia.org/wiki/Proposed_handover_of_Bashar_al-Assad_to_Syria"
+        },
+        {
+          "date": "2026-02-25",
+          "headline": "Academic analysis: Assad's exile fits the 'golden parachute' pattern",
+          "source": "Good Authority",
+          "summary": "Princeton researchers used the NYT Assad exile piece as a case study arguing exile in Russia has neutralized him politically \u2014 he's playing video games, not plotting a return \u2014 unlike opposition-in-exile cases such as Venezuela's.",
+          "url": "https://goodauthority.org/news/is-exile-a-dead-end-or-a-launching-pad-for-opposition/"
+        }
+      ],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-meta-accepting-rampant-china-ad-fraud",
@@ -751,7 +833,39 @@
       "timestamp_display": "1:27:25",
       "pov_summary": "Reuters investigation found Meta as a general policy accepts high levels of fraudulent Chinese ads across Facebook, Instagram, WhatsApp \u2014 scams from bogus Taiwanese supplements to investment scams on US/Canadian savers. Meta makes roughly $7B/year from ads it considers 'high risk.' Material revenue, not a rounding error. Big: not good.",
       "status": "ongoing, no sign of Meta acting",
-      "quote": "It earns about 7 billion a year from uh the portion of scam ads it considers quote high risk."
+      "quote": "It earns about 7 billion a year from uh the portion of scam ads it considers quote high risk.",
+      "updates_summary": "Since the episode aired, two major developments have advanced the Meta China ad fraud story: (1) a class action lawsuit was filed in California federal court in February 2026 targeting Meta's alleged role in enabling stock pump-and-dump scams via Facebook, Instagram, and WhatsApp ads \u2014 with plaintiffs attempting to bypass Section 230 protections; and (2) Meta publicly announced its own lawsuits in late February 2026 against scam advertisers in Brazil, China, and Vietnam, a move widely seen as a response to the Reuters expos\u00e9s. U.S. senators Gallego and Moreno also introduced legislation to force platforms to take reasonable steps against fraudulent ads.",
+      "updates": [
+        {
+          "date": "2026-02-05",
+          "headline": "Class action filed accusing Meta of knowingly facilitating pump-and-dump stock scams",
+          "source": "ClassAction.org",
+          "summary": "A proposed class action filed February 5 in California federal court alleges Meta turned a blind eye to stock manipulation scammers who used Facebook, Instagram and WhatsApp ads. The complaint notably argues Meta charged higher ad rates to suspected scammers rather than banning them \u2014 a theory designed to bypass Section 230 immunity.",
+          "url": "https://www.classaction.org/news/class-action-lawsuit-claims-meta-knowingly-facilitates-pump-and-dump-scammers-with-ads-on-facebook-instagram"
+        },
+        {
+          "date": "2026-02-26",
+          "headline": "Meta files lawsuits against Brazil, China, and Vietnam-based scam advertisers",
+          "source": "Meta Newsroom / The Hacker News",
+          "summary": "Meta announced lawsuits against deceptive advertisers including China-based Shenzhen Yunzheng Technology (accused of running celeb-bait investment scams targeting US and Japan) and issued cease-and-desist letters to eight marketing consultants who advertised the ability to evade Meta's enforcement. The move comes directly after the Reuters investigation and a review of Meta's Badged Partners program.",
+          "url": "https://about.fb.com/news/2026/02/meta-takes-legal-action-against-scam-advertisers/"
+        },
+        {
+          "date": "2026-02-26",
+          "headline": "U.S. senators introduce bill forcing platforms to take 'reasonable steps' against fraudulent ads",
+          "source": "PYMNTS",
+          "summary": "Senators Ruben Gallego (D-Ariz.) and Bernie Moreno (R-Ohio) introduced legislation explicitly citing the November Reuters report, which would require online platforms to take reasonable steps to stop fraudulent and deceptive ads.",
+          "url": "https://www.pymnts.com/legal/2026/meta-sues-advertisers-over-alleged-celebrity-impersonation-scams/"
+        },
+        {
+          "date": "2026-04-03",
+          "headline": "Meta and Google face growing wave of suits designed to circumvent Section 230",
+          "source": "CNBC",
+          "summary": "A CNBC analysis frames the Meta scam-ads class action as part of a broader legal trend \u2014 including recent verdicts against Meta on child safety \u2014 where plaintiffs are crafting cases to pierce Section 230's liability shield, potentially exposing Meta to significant damages over its ad business conduct.",
+          "url": "https://www.cnbc.com/2026/04/03/meta-google-under-attack-court-cases-bypass-30-year-old-legal-shield.html"
+        }
+      ],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-bank-of-america-reply-all-outlook-meltdown",
@@ -763,7 +877,10 @@
       "timestamp_display": "1:31:16",
       "pov_summary": "Someone sent an Outlook calendar invite to essentially all of Bank of America, triggering endless reply-all chains, Outlook crashes, and a thousand-email inboxes. Security told employees further reply-alls would be a security issue. Big verified with a BofA buddy that this happens every couple years. TC is tickled.",
       "status": "resolved-ish, recurring phenomenon",
-      "quote": "Breaking news. Someone sent an Outlook calendar invite to everyone at BFA. Everyone keeps replying all to the email chain. Outlook keeps crashing. They're trying to take us down from within."
+      "quote": "Breaking news. Someone sent an Outlook calendar invite to everyone at BFA. Everyone keeps replying all to the email chain. Outlook keeps crashing. They're trying to take us down from within.",
+      "updates_summary": "No substantive follow-up coverage found between the January 8, 2026 episode and April 18, 2026 on the Bank of America reply-all Outlook incident. Searches surfaced only unrelated BofA news (market outlook, earnings, return-to-office policy) and no reporting on consequences, internal memos, or a recurrence of the email storm.",
+      "updates": [],
+      "updates_fetched_at": "2026-04-18"
     },
     {
       "id": "377-telluride-ski-patrol-strike-drags-on",
